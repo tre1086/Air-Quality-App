@@ -54,7 +54,6 @@ class HomeController < ApplicationController
       require 'json'
       @url = 'http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=' + "#{@zip_query}" + '&distance=0&API_KEY=A1931E82-710B-4C30-849A-2F1034D7EE51'    
       @uri = URI(@url)
-      byebug
       @response = Net::HTTP.get(@uri)
       @output = JSON.parse(@response)
     
